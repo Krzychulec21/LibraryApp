@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mojabazaa</property>
+
+        <property name="hibernate.connection.username">root</property>
+
+        <property name="hibernate.connection.password">12345678</property>
+
+        <property name="hibernate.show_sql">true</property>
+
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+
+        <mapping class="com.example.library.Logowania"/>
+        <mapping class="com.example.library.Osoba"/>
+        <mapping class="com.example.library.Autor"/>
+        <mapping class="com.example.library.Ksiazka"/>
+        <mapping class="com.example.library.Wydawnictwo"/>
+        <mapping class="com.example.library.Gatunek"/>
+        <mapping class="com.example.library.Wypozyczenia"/>
+
+
+    </session-factory>
+</hibernate-configuration>
