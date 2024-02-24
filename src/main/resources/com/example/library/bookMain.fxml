@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="791.0" prefWidth="1282.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.KontrolerKsiazek">
+   <children>
+      <AnchorPane prefHeight="791.0" prefWidth="200.0" styleClass="background" stylesheets="@fxmlstyle.css">
+         <children>
+            <Button fx:id="btnList" layoutX="55.0" layoutY="30.0" mnemonicParsing="false" onAction="#clickList" prefHeight="60.0" prefWidth="90.0" styleClass="btn" stylesheets="@fxmlstyle.css">
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/books.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnAdd" layoutX="55.0" layoutY="170.0" mnemonicParsing="false" onAction="#clickAdd" prefHeight="60.0" prefWidth="90.0" styleClass="btn" stylesheets="@fxmlstyle.css">
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/bookAdd.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnSearch" layoutX="55.0" layoutY="310.0" mnemonicParsing="false" onAction="#clickSearch" prefHeight="60.0" prefWidth="90.0" styleClass="btn" stylesheets="@fxmlstyle.css">
+               <graphic>
+                  <ImageView accessibleRole="BUTTON" fitHeight="61.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/bookSearch.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Text layoutX="76.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTA" textOrigin="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="72.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DODAJ" textOrigin="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="66.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SZUKAJ" textOrigin="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Text>
+            <Button fx:id="back" layoutY="1.0" mnemonicParsing="false" onAction="#clickBack" prefHeight="35.0" prefWidth="20.0" style="-fx-background-color: transparent;" styleClass="back" stylesheets="@fxmlstyle.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableView" layoutX="223.0" layoutY="235.0" prefHeight="531.0" prefWidth="1053.0" stylesheets="@fxmlstyle.css">
+        <columns>
+          <TableColumn fx:id="idCol" editable="false" prefWidth="51.0" resizable="false" style="-fx-background-color: transparent;" text="Id" />
+          <TableColumn fx:id="tytulCol" editable="false" prefWidth="147.0" style="-fx-background-color: transparent;" text="Tytuł" />
+            <TableColumn fx:id="autorCol" editable="false" prefWidth="156.0" style="-fx-background-color: transparent;" text="Autor" />
+            <TableColumn fx:id="wydawnictwoCol" editable="false" prefWidth="140.0" style="-fx-background-color: transparent;" text="Wydawnictwo" />
+            <TableColumn fx:id="rokCol" editable="false" minWidth="7.0" prefWidth="98.0" style="-fx-background-color: transparent;" text="Rok" />
+            <TableColumn fx:id="okladkaCol" editable="false" prefWidth="102.0" style="-fx-background-color: transparent;" text="Okladka" />
+            <TableColumn fx:id="gatunekCol" prefWidth="110.0" style="-fx-background-color: transparent;" text="Gatunek" />
+            <TableColumn fx:id="statusCol" prefWidth="115.0" style="-fx-background-color: transparent;" text="Status" />
+            <TableColumn fx:id="editColumn" editable="false" minWidth="0.0" prefWidth="133.0" style="-fx-background-color: transparent;" text="Edycja" />
+        </columns>
+      </TableView>
+      <TextField fx:id="tytulField" layoutX="254.0" layoutY="87.0" promptText="tytul" visible="false" />
+      <TextField fx:id="rokField" layoutX="254.0" layoutY="150.0" promptText="rok" visible="false" />
+      <Button fx:id="addBookBtn" layoutX="940.0" layoutY="80.0" mnemonicParsing="false" onAction="#dodajKsiazke" text="Dodaj" visible="false" />
+      <RadioButton fx:id="grubaOkladka" layoutX="757.0" layoutY="150.0" mnemonicParsing="false" text="Twarda" visible="false">
+         <toggleGroup>
+            <ToggleGroup fx:id="wybor" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="cienkaOkladka" layoutX="758.0" layoutY="179.0" mnemonicParsing="false" text="Miękka" toggleGroup="$wybor" visible="false" />
+      <ComboBox fx:id="autorChoiceBox" layoutX="500.0" layoutY="87.0" onMouseClicked="#rozwijAutorow" prefWidth="150.0" visible="false" />
+      <ComboBox fx:id="wydawnictwoChoiceBox" layoutX="500.0" layoutY="150.0" onMouseClicked="#rozwijWydawncitwa" prefWidth="150.0" visible="false" />
+      <TextField fx:id="danaAkcjaField" alignment="CENTER" editable="false" layoutX="400.0" layoutY="15.0" style="-fx-background-color: transparent;" visible="false">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="gatunekComboBox" layoutX="712.0" layoutY="87.0" onMouseClicked="#rozwijGatunki" prefWidth="150.0" visible="false" />
+      <Text fx:id="infoTytul" layoutX="254.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł:" visible="false" />
+      <Text fx:id="infoRok" layoutX="257.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rok wydania:" visible="false" />
+      <Text fx:id="infoAutor" layoutX="498.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autor:" visible="false" />
+      <Text fx:id="infoWydawnictwo" layoutX="498.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wydawnictwo:" visible="false" />
+      <Text fx:id="infoGatunek" layoutX="712.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gatunek:" visible="false" />
+      <Text fx:id="infoOkladka" layoutX="712.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rodzaj okładki:" visible="false" />
+      <Button fx:id="anulujDodawanieBtn" layoutX="940.0" layoutY="130.0" mnemonicParsing="false" onAction="#anulujDodawanie" text="Anuluj" visible="false" />
+      <Button fx:id="editBookBtn" layoutX="930.0" layoutY="80.0" mnemonicParsing="false" onAction="#edytujKsiazke" text="Zatwierdź" visible="false" />
+      <Button fx:id="anulujEditBtn" layoutX="940.0" layoutY="130.0" mnemonicParsing="false" onAction="#anulujEdytowanie" text="Anuluj" visible="false" />
+      <Button fx:id="anulujSzukanieBtn" layoutX="940.0" layoutY="130.0" mnemonicParsing="false" onAction="#anulujSzukanie" text="Anuluj" visible="false" />
+      <TextField fx:id="info" alignment="CENTER" editable="false" layoutX="1007.0" layoutY="15.0" prefHeight="32.0" prefWidth="184.0" style="-fx-background-color: transparent;" text="info" visible="false">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="textField1" layoutX="1038.0" layoutY="68.0" visible="false" />
+      <TextField fx:id="textField2" layoutX="1038.0" layoutY="118.0" visible="false" />
+      <Text fx:id="text1" layoutX="1038.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="text2" layoutX="1038.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Button fx:id="dodajObiektBtn" layoutX="1085.0" layoutY="170.0" mnemonicParsing="false" onAction="#dodajObiekt" text="dodaj" visible="false" />
+      <Button fx:id="anulujObiektBtn" layoutX="1085.0" layoutY="200.0" mnemonicParsing="false" onAction="#anulujObiekt" text="anuluj" visible="false" />
+      <Button fx:id="dodajAutoraBtn" layoutX="655.0" layoutY="87.0" mnemonicParsing="false" onAction="#dodajAutora" prefHeight="25.0" prefWidth="32.0" visible="false">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="dodajObiektWydawnictwo" layoutX="1085.0" layoutY="170.0" mnemonicParsing="false" onAction="#dodajObiektWydawnictwo" text="dodaj" visible="false" />
+      <Button fx:id="dodajWydawnictwoBtn" layoutX="655.0" layoutY="150.0" mnemonicParsing="false" onAction="#dodajWydawnictwo" prefHeight="25.0" prefWidth="32.0" visible="false">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="dodajObiektGatunek" layoutX="1085.0" layoutY="170.0" mnemonicParsing="false" onAction="#dodajObiektGatunek" text="dodaj" visible="false" />
+      <Button fx:id="dodajGatunek" layoutX="867.0" layoutY="85.0" mnemonicParsing="false" onAction="#dodajGatunek" prefHeight="25.0" prefWidth="32.0" visible="false">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/add.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text fx:id="errorTextAddObjects" layoutX="989.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="289.13671875" />
+      <Text fx:id="errorText" layoutX="596.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="379.13671875">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text fx:id="wyszukajPoText" layoutX="266.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wyszukaj po: " visible="false" wrappingWidth="93.69140625" />
+      <Button fx:id="szukajPoIDBtn" layoutX="266.0" layoutY="60.0" mnemonicParsing="false" onAction="#szukajPoID" text="ID" visible="false" />
+      <Button fx:id="szukajPoTytlueBtn" layoutX="266.0" layoutY="100.0" mnemonicParsing="false" onAction="#szukajPoTytule" text="Tytuł" visible="false" />
+      <Button fx:id="szukajPoAutorzeBtn" layoutX="266.0" layoutY="140.0" mnemonicParsing="false" onAction="#szukajPoAutorze" text="Autor" visible="false" />
+      <Button fx:id="zatwierdzSzukaniePoAutorBtn" layoutX="700.0" layoutY="87.0" mnemonicParsing="false" onAction="#zatwierdzSzukaniePoAutor" text="Wyszukaj" visible="false" />
+      <Button fx:id="anulujSzukaniePoBtn" layoutX="700.0" layoutY="121.0" mnemonicParsing="false" onAction="#anulujSzukaniePo" text="Anuluj" visible="false" />
+      <TextField fx:id="szukajField" layoutX="500.0" layoutY="89.0" visible="false" />
+      <Text fx:id="szukaniePoText" layoutX="498.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="131.20782470703125" />
+      <Button fx:id="zatwierdzSzukaniePoTytulBtn" layoutX="700.0" layoutY="87.0" mnemonicParsing="false" onAction="#zatwierdzSzukaniePoTytul" text="Wyszukaj" visible="false" />
+      <Button fx:id="zatwierdzSzukaniePoIDBtn" layoutX="700.0" layoutY="87.0" mnemonicParsing="false" onAction="#zatwierdzSzukaniePoID" text="Wyszukaj" visible="false" />
+      <Text fx:id="bladSzukaniaText" layoutX="512.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="258.13671875" />
+   </children>
+</AnchorPane>

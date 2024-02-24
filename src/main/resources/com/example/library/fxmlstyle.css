@@ -1,0 +1,140 @@
+.background {
+    -fx-background-color: linear-gradient(to top, #d9b38c, #ffffff);
+}
+
+.btn {
+    -fx-background-color: #ffffff;
+    -fx-opacity: 70%;
+    -fx-background-radius: 20px;
+}
+
+.editField {
+    -fx-background-color: #ffffff;
+    -fx-opacity: 100%;
+    -fx-background-radius: 20px;
+}
+
+.btn:hover {
+    -fx-background-color: #ffffff;
+    -fx-opacity: 100%;
+    -fx-background-radius: 20px;
+
+}
+.btnWypo:hover{
+    -fx-border-width: 3px 3px 3px 3px;
+    -fx-border-color: black;
+}
+.btnWypo{
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to right, #d9b38c44, #ffffff44);
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px 2px 2px 2px
+}
+
+.back {
+    -fx-background-radius: 50%;
+}
+
+
+.textField {
+    -fx-background-color: transparent;
+    -fx-border-color: #804000;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+
+.addButton {
+    -fx-background-color: transparent;
+    -fx-border-color: #804000;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 10px;
+}
+
+/*tabela i wiszytko*/
+.table-view {
+    -fx-background-color: transparent;
+    -fx-text-alignment: center;
+    -fx-row-valignment: center;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #d9b38c44, #ffffff44);
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 11px 0 0;
+    -fx-padding: 0 0 5px 0;
+}
+
+.table-view .table-cell {
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+
+/*.table-row-cell:hover {*/
+/*    -fx-background-color: #ffffff11;*/
+/*    -fx-text-background-color: red;*/
+/*}*/
+.table-row-cell:odd {
+    -fx-background-color: #ffffff11;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #d9b38c11;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:selected {
+    -fx-font-weight: bold;
+    /*-fx-font-family: "Arial Black";*/
+    /*-fx-font-size: 12px;*/
+    /*-fx-font-size: 15px; !*to na maku bo nie dziala bold w apce *!*/
+}
+
+.table-cell {
+    -fx-text-fill: black;
+}
+
+.table-view .table-cell {
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(to bottom, #d9b38c44, #ffffff44);
+}
+
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color: linear-gradient(to right, #d9b38c44, #ffffff44);
+}
+
+.confirmBtn {
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to right, #d9b38c44, #ffffff44);
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px 2px 2px 2px
+}

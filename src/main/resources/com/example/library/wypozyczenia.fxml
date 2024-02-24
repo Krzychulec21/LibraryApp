@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="791.0" prefWidth="1217.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.KontrolerWypozyczen">
+   <children>
+      <TableView fx:id="tableUsers" layoutX="51.0" layoutY="77.0" prefHeight="220.0" prefWidth="394.0" stylesheets="@fxmlstyle.css">
+        <columns>
+          <TableColumn fx:id="userIdCol" prefWidth="60.0" style="-fx-background-color: transparent;" text="Id" />
+          <TableColumn fx:id="userNameCol" prefWidth="140.0" style="-fx-background-color: transparent;" text="Imie" />
+            <TableColumn fx:id="userSurnameCol" prefWidth="140.0" style="-fx-background-color: transparent;" text="Nazwisko" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableBooks" layoutX="676.0" layoutY="77.0" prefHeight="220.0" prefWidth="485.0" stylesheets="@fxmlstyle.css">
+        <columns>
+          <TableColumn fx:id="bookIdCol" prefWidth="60.0" style="-fx-background-color: transparent;" text="Id" />
+          <TableColumn fx:id="bookTitleCol" prefWidth="180.0" style="-fx-background-color: transparent;" text="Tytul" />
+            <TableColumn fx:id="bookAuthorCol" prefWidth="180.0" style="-fx-background-color: transparent;" text="Autor" />
+        </columns>
+      </TableView>
+      <TextField fx:id="fieldUserID" layoutX="222.0" layoutY="42.0" prefHeight="25.0" prefWidth="101.0" />
+      <TextField fx:id="fieldBookID" layoutX="933.0" layoutY="42.0" prefHeight="25.0" prefWidth="101.0" />
+      <Button fx:id="loadSelectedUsersBtn" layoutX="338.0" layoutY="41.0" mnemonicParsing="false" onAction="#loadSelectedUsers" text="Wyszukaj po ID">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button fx:id="loadSelectedBooksBtn" layoutX="1054.0" layoutY="41.0" mnemonicParsing="false" onAction="#loadSelectedBooks" text="Wyszukaj po ID">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button fx:id="loadAllUsersBtn" layoutX="51.0" layoutY="44.0" mnemonicParsing="false" onAction="#loadAllUsers" text="Lista">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font></Button>
+      <Button fx:id="loadAllBooksBtn" layoutX="676.0" layoutY="41.0" mnemonicParsing="false" onAction="#loadAllBooks" text="Lista">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button fx:id="polaczBtn" layoutX="499.0" layoutY="171.0" mnemonicParsing="false" onAction="#polacz" text="WYPOŻYCZ">
+         <font>
+            <Font name="Arial Black" size="15.0" />
+         </font></Button>
+      <TableView fx:id="tableWypo" layoutX="56.0" layoutY="384.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="393.0" prefWidth="1123.0" stylesheets="@fxmlstyle.css">
+        <columns>
+          <TableColumn fx:id="lendIdCol" prefWidth="70.0" style="-fx-background-color: transparent;" text="Id" />
+          <TableColumn fx:id="lendUserIdCol" prefWidth="70.0" style="-fx-background-color: transparent;" text="Id osoby" />
+            <TableColumn fx:id="lendUserNameCol" prefWidth="140.0" style="-fx-background-color: transparent;" text="Imie" />
+            <TableColumn fx:id="lendUserSurnameCol" prefWidth="140.0" style="-fx-background-color: transparent;" text="Nazwisko" />
+            <TableColumn fx:id="lendBookIdCol" minWidth="0.0" prefWidth="70.0" style="-fx-background-color: transparent;" text="Id ksiazki" />
+            <TableColumn fx:id="lendBookTitleCol" prefWidth="160.0" style="-fx-background-color: transparent;" text="Tytul" />
+            <TableColumn fx:id="lendBookAuthorCol" prefWidth="160.0" style="-fx-background-color: transparent;" text="Autor" />
+            <TableColumn fx:id="lendDataWypoCol" prefWidth="100.0" style="-fx-background-color: transparent;" text="Data wypozyczenia" />
+            <TableColumn fx:id="lendDataOddCol" prefWidth="100.0" style="-fx-background-color: transparent;" text="Data oddania " />
+            <TableColumn fx:id="editColumn" prefWidth="91.0" style="-fx-background-color: transparent;" text="Akcja" />
+        </columns>
+      </TableView>
+      <Button fx:id="loadTableBtn" layoutX="56.0" layoutY="348.0" mnemonicParsing="false" onAction="#loadTable" text="Lista">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <TextField fx:id="fieldInfo" layoutX="440.0" layoutY="133.0" prefHeight="32.0" prefWidth="226.0" style="-fx-background-color: transparent;" visible="false" />
+      <Button fx:id="backBtn" mnemonicParsing="false" onAction="#backToMenu" prefHeight="32.0" prefWidth="37.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="wypoUserIdField" layoutX="589.0" layoutY="349.0" prefHeight="25.0" prefWidth="100.0" />
+      <TextField fx:id="wypoBookIdField" layoutX="914.0" layoutY="349.0" prefHeight="25.0" prefWidth="107.0" />
+      <Button fx:id="szukajUserIDBtn" layoutX="707.0" layoutY="349.0" mnemonicParsing="false" onAction="#szukajWypoUser" text="Wyszukaj po ID osoby">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="szukajBookIDBtn" layoutX="1034.0" layoutY="349.0" mnemonicParsing="false" onAction="#szukajWypoBook" text="Wyszukaj po ID książki">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Text fx:id="errorWypoText" layoutX="834.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dozwolone sa tylko cyfry!" visible="false" />
+      <Text fx:id="errorSzukajText" layoutX="522.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dozwolone sa tylko cyfry!" visible="false" />
+      <Text layoutX="128.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OSOBY">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="747.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KSIĄŻKI">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="128.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WYPOŻYCZENIA">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="szukajPoNazwiskuBtn" layoutX="338.0" layoutY="9.0" mnemonicParsing="false" onAction="#szukajPoNazwisku" text="Wyszukaj po nazwisku" />
+      <Button fx:id="szukajPoTytuleBtn" layoutX="1054.0" layoutY="9.0" mnemonicParsing="false" onAction="#szukajPoTytule" text="Wyszukaj po tytule" />
+      <TextField fx:id="nazwiskoField" layoutX="174.0" layoutY="9.0" />
+      <TextField fx:id="tytulField" layoutX="885.0" layoutY="9.0" />
+   </children>
+</AnchorPane>

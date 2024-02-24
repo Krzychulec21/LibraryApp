@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="965.0" stylesheets="@fxmlstyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controller.KontrolerUzytkownika">
+   <children>
+      <AnchorPane layoutY="3.0" prefHeight="600.0" prefWidth="200.0" styleClass="background" stylesheets="@fxmlstyle.css">
+         <children>
+            <Button fx:id="btnList" layoutX="55.0" layoutY="30.0" mnemonicParsing="false" onAction="#clickList" prefHeight="60.0" prefWidth="90.0" style="-fx-background-color: transparent;" styleClass="btn" stylesheets="@fxmlstyle.css">
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/group.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnAdd" layoutX="55.0" layoutY="266.0" mnemonicParsing="false" onAction="#clickAdd" prefHeight="60.0" prefWidth="90.0" style="-fx-background-color: transparent;" styleClass="btn" stylesheets="@fxmlstyle.css">
+               <graphic>
+                  <ImageView fitHeight="61.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/add-user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnSearch" layoutX="55.0" layoutY="470.0" mnemonicParsing="false" onAction="#clickSearch" prefHeight="60.0" prefWidth="90.0" style="-fx-background-color: transparent;" styleClass="btn" stylesheets="@fxmlstyle.css">
+               <graphic>
+                  <ImageView accessibleRole="BUTTON" fitHeight="61.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Text layoutX="76.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTA" textOrigin="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="72.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DODAJ" textOrigin="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="66.0" layoutY="558.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SZUKAJ" textOrigin="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Text>
+            <Button fx:id="back" mnemonicParsing="false" onAction="#clickBack" prefHeight="35.0" prefWidth="37.0" style="-fx-background-color: transparent;" styleClass="back" stylesheets="@fxmlstyle.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableView" layoutX="260.0" layoutY="87.0" prefHeight="502.0" prefWidth="601.0" stylesheets="@fxmlstyle.css">
+        <columns>
+          <TableColumn fx:id="idCol" editable="false" prefWidth="75.0" style="-fx-background-color: transparent;" text="ID" />
+          <TableColumn fx:id="imieCol" prefWidth="112.0" style="-fx-background-color: transparent;" text="IMIE " />
+            <TableColumn id="naz" fx:id="nazwiskoCol" prefWidth="116.0" style="-fx-background-color: transparent;" text="NAZWISKO" />
+            <TableColumn fx:id="telCol" prefWidth="141.0" style="-fx-background-color: transparent;" text="TELEFON" />
+            <TableColumn fx:id="editColumn" editable="false" prefWidth="153.0" sortable="false" style="-fx-background-color: transparent;" text="Edycja" />
+        </columns>
+      </TableView>
+      <TextField fx:id="nameField" layoutX="234.0" layoutY="43.0" promptText="Imię" styleClass="editField" stylesheets="@fxmlstyle.css" visible="false" />
+      <TextField fx:id="infoField" editable="false" layoutX="443.0" layoutY="14.0" style="-fx-background-color: transparent;" text="Edycja użytkownika" visible="false" />
+      <TextField fx:id="surnameField" layoutX="443.0" layoutY="43.0" promptText="Nazwisko" styleClass="editField" stylesheets="@fxmlstyle.css" visible="false" />
+      <TextField fx:id="telField" layoutX="670.0" layoutY="43.0" promptText="Telefon" styleClass="editField" stylesheets="@fxmlstyle.css" visible="false" />
+      <Button fx:id="zatwierdzBtn" layoutX="880.0" layoutY="15.0" mnemonicParsing="false" onAction="#zatwierdz" styleClass="confirmBtn" stylesheets="@fxmlstyle.css" text="zatwierdz" visible="false" />
+      <Button fx:id="anulujBtn" layoutX="880.0" layoutY="50.0" mnemonicParsing="false" onAction="#anuluj" styleClass="confirmBtn" stylesheets="@fxmlstyle.css" text="anuluj" visible="false" />
+      <Button fx:id="zatwierdzSzukanieBtn" layoutX="880.0" layoutY="15.0" mnemonicParsing="false" onAction="#zatwierdzSzukanie" styleClass="confirmBtn" stylesheets="@fxmlstyle.css" text="Zatwierdz" visible="false" />
+      <Button fx:id="anulujSzukanieBtn" layoutX="880.0" layoutY="50.0" mnemonicParsing="false" onAction="#anulujSzukanie" styleClass="confirmBtn" stylesheets="@fxmlstyle.css" text="Anuluj" visible="false" />
+      <Button fx:id="zatwierdzDodawanieBtn" layoutX="880.0" layoutY="17.0" mnemonicParsing="false" onAction="#zatwierdzDodawanie" styleClass="confirmBtn" stylesheets="@fxmlstyle.css" text="Zatwierdź" visible="false" />
+      <Button fx:id="anulujDodawanieBtn" layoutX="880.0" layoutY="50.0" mnemonicParsing="false" onAction="#anulujDodawanie" styleClass="confirmBtn" stylesheets="@fxmlstyle.css" text="Anuluj" visible="false" />
+      <Text fx:id="errorText" layoutX="610.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" wrappingWidth="250.13671875">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
